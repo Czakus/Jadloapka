@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  chosenPage: string = 'recipes';
+
+  onChangedPage(page: string) {
+    this.chosenPage=page;
+  }
 }
