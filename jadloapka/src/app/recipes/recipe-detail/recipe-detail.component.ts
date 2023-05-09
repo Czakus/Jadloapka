@@ -9,5 +9,5 @@ import { Recipe } from '../recipe.model';
 
 export class RecipeDetailComponent {
   @Input() recipe: Recipe;
-  @Input() isDropdownOpen: boolean = false;
+  dropdownClassValue: string = "btn-group"
 }
