@@ -10,7 +10,7 @@
 </div>
 <div class="row">
     <div class="col-xs12">
-        <div class="btn-group">
+        <div [class]="dropdownClassValue" (click)="isDropdownOpen = !isDropdownOpen" *appDropdown="isDropdownOpen">
             <button 
                 type="button" 
                 class="btn btn-primary dropdown-toggle">
