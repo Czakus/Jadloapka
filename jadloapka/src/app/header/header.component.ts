@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-header',
@@ -6,10 +6,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 
 export class HeaderComponent {
-    @Output() pageHasChanged = new EventEmitter<string>();
-
-    onSelectedPage(page:string) {
-        this.pageHasChanged.emit(page);
-    }
-
 }

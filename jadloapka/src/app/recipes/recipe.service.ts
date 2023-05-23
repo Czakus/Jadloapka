@@ -6,16 +6,18 @@ export class RecipeService {
     recipeSelected = new EventEmitter<Recipe>();
 
     private recipes: Recipe[] = [
-        new Recipe('Tasty Schnitzel',
+        new Recipe( 1,
+                    'Tasty Schnitzel',
                     'Super pyszny schnitzel - ROBI WRAZENIE',
                     'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505',
                     [
                         new Ingredient('Meat', 1),
                         new Ingredient('French Fries', 20)
                     ]),
-        new Recipe('DUZY TLUSTY BURGIR',
+        new Recipe( 2,
+                    'DUZY TLUSTY BURGIR',
                     'Dla Otylego Pana',
-                    'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505',
+                    'https://slevomat.sgcdn.cz/images/t/2000/14/75/14755452-ef79c0.jpg',
                     [
                         new Ingredient('Buns', 2),
                         new Ingredient('Meat', 1)
