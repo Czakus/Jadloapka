@@ -16,19 +16,13 @@ export class ShoppingEditComponent {
   constructor(private shoppingListService: ShoppingListService) {}
 
 
-  onAddedIngredient() {
+  onAddedIngredient(form: NgForm) {
     this.createdIngredient = new Ingredient(this.ingredientForm.value['name'], this.ingredientForm.value['amount']);
     this.shoppingListService.onAddedIngredient(this.createdIngredient);
   }
-
-  
 
   onClear() {
     this.ingredientForm.reset();
   }
   
-  // onAddedIngredient() {
-  //   // this.createdIngredient = new Ingredient(this.nameInput.nativeElement.value, this.amountInput.nativeElement.value);
-  //   // this.shoppingListService.onAddedIngredient(this.createdIngredient);
-  // }
 }
