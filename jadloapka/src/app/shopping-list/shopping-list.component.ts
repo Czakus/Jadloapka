@@ -22,7 +22,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         this.ingredients = ing;
       }
     )
-    
+  }
+
+  onSelectedIngredient(index: number) {
+    this.shoppingListService.indexOfChosenIngredient.next(index);
   }
 
   ngOnDestroy(): void {
