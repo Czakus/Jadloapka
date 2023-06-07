@@ -14,6 +14,7 @@ import { RecipeService } from '../recipe.service';
 export class RecipeDetailComponent implements OnInit{
   recipe: Recipe;
   dropdownClassValue: string = "btn-group";
+  recipeIndex: number;
 
   
   constructor(private shoppService: ShoppingListService,
@@ -24,18 +25,26 @@ export class RecipeDetailComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        this.recipe = this.recipeService.getRecipe(+params['id']);
+        this.recipeIndex = +params['id'];
+        this.recipe = this.recipeService.getRecipe(this.recipeIndex);
+        
       }
     );
-  }
-
-  onEditRecipe() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
   onAddToShoppingList() {
     for (let ingredient of this.recipe.ingredients) {
       this.shoppService.onAddedIngredient(ingredient);
     }
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.recipeIndex);
+    this.router.navigate(['../'], {relativeTo: this.route});
+    
   }
 }

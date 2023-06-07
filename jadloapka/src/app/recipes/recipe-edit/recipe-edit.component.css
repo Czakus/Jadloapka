@@ -6,3 +6,7 @@
 textarea {
     margin-bottom: 15px;
 }
+
+.ng-touched.ng-invalid {
+    border-color: red;
+}
