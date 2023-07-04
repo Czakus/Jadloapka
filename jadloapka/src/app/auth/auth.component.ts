@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Observable } from "rxjs";
+import { Router } from "@angular/router";
 
 import { AuthResponseData, AuthService } from "./auth.service";
-import { Observable } from "rxjs";
 
 @Component({
     selector: 'app-auth',
@@ -11,7 +12,10 @@ import { Observable } from "rxjs";
 })
 
 export class AuthComponent {
-    constructor(private authService: AuthService) { }
+
+    constructor(private authService: AuthService,
+                private router: Router) { }
+
     isLoginMode = true;
     isLoading = false;
     error: string = null;
@@ -40,6 +44,7 @@ export class AuthComponent {
         authObs.subscribe(responseData => {
             console.log(responseData);
             this.isLoading = false;
+            this.router.navigate(['/recipes']);
         }, errorMessage => {
             this.error = 'An error during siginig up occured! <br>  Error message: ' + errorMessage;
             this.isLoading = false;
