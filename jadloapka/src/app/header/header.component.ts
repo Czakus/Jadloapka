@@ -12,7 +12,9 @@ import { AuthService } from '../auth/auth.service';
 
 export class HeaderComponent implements OnInit, OnDestroy {
 
-    constructor(private dataStorage: DataStorageService, 
+    collapsed = true;
+
+    constructor(private dataStorage: DataStorageService,
                 private authService: AuthService) {}
 
     private userSub: Subscription;
