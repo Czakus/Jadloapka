@@ -1,0 +1,9 @@
+a {
+  background-color: #706d6d;
+  color: #e2dede;
+}
+
+a.list-group-item .list-group-item-heading {
+  color: #e2dede;
+  font-weight: bold;
+}

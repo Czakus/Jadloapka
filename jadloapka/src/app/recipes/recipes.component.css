@@ -1,0 +1,15 @@
+.row {
+  background-color: #2b2b2b;
+  border-radius: 10px;
+}
+
+.col-md-5 {
+  margin-top: 20px;
+  background-color: #575656;
+  border-radius: 2px;
+
+}
+
+.col-md-7 {
+  margin-top: 20px;
+}
